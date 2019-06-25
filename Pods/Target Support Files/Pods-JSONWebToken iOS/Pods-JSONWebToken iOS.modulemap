@@ -1,0 +1,6 @@
+framework module Pods_JSONWebToken_iOS {
+  umbrella header "Pods-JSONWebToken iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
