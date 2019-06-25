@@ -1,11 +1,11 @@
 import Foundation
 
-func validateDate(_ payload: Payload, key: String, comparison: ComparisonResult, leeway: TimeInterval = 0, failure: InvalidToken, decodeError: String) throws {
+func JWTvalidateDate(_ payload: Payload, key: String, comparison: ComparisonResult, leeway: TimeInterval = 0, failure: InvalidToken, decodeError: String) throws {
   if payload[key] == nil {
     return
   }
 
-  guard let date = extractDate(payload: payload, key: key) else {
+  guard let date = JWTextractDate(payload: payload, key: key) else {
     throw InvalidToken.decodeError(decodeError)
   }
 	
@@ -14,7 +14,7 @@ func validateDate(_ payload: Payload, key: String, comparison: ComparisonResult,
   }
 }
 
-fileprivate func extractDate(payload: Payload, key: String) -> Date? {
+fileprivate func JWTextractDate(payload: Payload, key: String) -> Date? {
   if let timestamp = payload[key] as? TimeInterval {
     return Date(timeIntervalSince1970: timestamp)
   }

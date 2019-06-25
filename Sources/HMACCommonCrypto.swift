@@ -25,7 +25,7 @@ extension HMACAlgorithm {
   }
 }
 
-func hmac(algorithm: HMACAlgorithm, key: Data, message: Data) -> Data {
+func JWThmac(algorithm: HMACAlgorithm, key: Data, message: Data) -> Data {
     let context = UnsafeMutablePointer<CCHmacContext>.allocate(capacity: 1)
     defer { context.deallocate() }
     

@@ -33,7 +33,7 @@ public enum Algorithm: CustomStringConvertible {
   func sign(_ message: String) -> String {
     func signHS(_ key: Data, algorithm: HMACAlgorithm) -> String {
       let messageData = message.data(using: String.Encoding.utf8, allowLossyConversion: false)!
-      return base64encode(hmac(algorithm: algorithm, key: key, message: messageData))
+      return JWTbase64encode(JWThmac(algorithm: algorithm, key: key, message: messageData))
     }
 
     switch self {
@@ -53,6 +53,6 @@ public enum Algorithm: CustomStringConvertible {
 
   /// Verify a signature for a message using the algorithm
   func verify(_ message: String, signature: Data) -> Bool {
-    return sign(message) == base64encode(signature)
+    return sign(message) == JWTbase64encode(signature)
   }
 }
