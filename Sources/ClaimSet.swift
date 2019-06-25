@@ -1,7 +1,7 @@
 import Foundation
 
 public struct ClaimSet {
-  var claims: [String: Any]
+  public private(set) var claims: [String: Any]
 
   public init(claims: [String: Any]? = nil) {
     self.claims = claims ?? [:]
