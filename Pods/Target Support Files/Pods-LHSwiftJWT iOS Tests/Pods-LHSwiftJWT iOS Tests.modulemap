@@ -1,0 +1,6 @@
+framework module Pods_LHSwiftJWT_iOS_Tests {
+  umbrella header "Pods-LHSwiftJWT iOS Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

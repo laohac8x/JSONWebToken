@@ -1,0 +1,6 @@
+framework module Pods_LHSwiftJWT_iOS {
+  umbrella header "Pods-LHSwiftJWT iOS-umbrella.h"
+
+  export *
+  module * { export * }
+}
